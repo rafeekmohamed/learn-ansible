@@ -8,3 +8,7 @@
       service:
            name: nginx
            state: started
+    - name: Prints two lines of messages, but only if there is an environment value set
+      ansible.builtin.debug:
+        msg:
+          - "Hi Chaitanya , how are you doing today.  I am fine and learning DevOps"
