@@ -1,5 +1,6 @@
 - name: To Install NGINX
   hosts: localhost
+  become : True
   tasks:
     - name: install nginx
       dnf : name=nginx state=latest
