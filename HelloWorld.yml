@@ -1,12 +1,5 @@
-- name: Play dedicated to vars_prompt and storing facts in localhost
+- name: To Install NGINX
   hosts: localhost
-  gather_facts: false
-
-  vars_prompt:
-    - name: my_prompt
-      prompt: enter a value
-      private: no
-
   tasks:
     - name: install nginx
       apt: name=nginx state=latest
