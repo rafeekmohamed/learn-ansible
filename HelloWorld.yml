@@ -1,4 +1,13 @@
-- hosts : all
-  tasks :
-    -ansible.builtin.debug :
-      'Hello World'
+- name: Play dedicated to vars_prompt and storing facts in localhost
+  hosts: localhost
+  gather_facts: false
+
+  vars_prompt:
+    - name: my_prompt
+      prompt: enter a value
+      private: no
+
+  tasks:
+    - name: store prompt in fact
+      set_fact:
+        my_prompt: "{{ my_prompt }}"
