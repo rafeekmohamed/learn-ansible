@@ -2,8 +2,8 @@
   hosts: localhost
   tasks:
     - name: install nginx
-      apt: name=nginx state=latest
-        - name: start nginx
-          service:
-            name: nginx
-            state: started
+      apt : name=nginx state=latest
+    - name : start nginx
+      service:
+           name: nginx
+           state: started
