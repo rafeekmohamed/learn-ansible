@@ -1,0 +1,38 @@
+- name: Demonstrate Ansible Variable Types
+  hosts: localhost
+  gather_facts: no
+  vars:
+    # String Variable
+    string_var: "This is a string variable"
+
+    # Integer Variable
+    int_var: 42
+
+    # Float Variable
+    float_var: 3.14
+
+    # Boolean Variable
+    bool_var: true
+
+    # List Variable
+    list_var:
+      - item1
+      - item2
+      - item3
+
+    # Dictionary Variable
+    dict_var:
+      key1: value1
+      key2: value2
+      key3: value3
+
+  tasks:
+    - name: Print Variable Types
+      debug:
+        msg: |
+          String Variable: {{ string_var }} (Type: {{ string_var | type_debug }})
+          Integer Variable: {{ int_var }} (Type: {{ int_var | type_debug }})
+          Float Variable: {{ float_var }} (Type: {{ float_var | type_debug }})
+          Boolean Variable: {{ bool_var }} (Type: {{ bool_var | type_debug }})
+          List Variable: {{ list_var }} (Type: {{ list_var | type_debug }})
+          Dictionary Variable: {{ dict_var }} (Type: {{ dict_var | type_debug }})
