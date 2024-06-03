@@ -1,0 +1,16 @@
+- name: Loops
+  hosts: localhost
+  tasks:
+    - name: Print Fruits
+      ansible.builtin.debug:
+        msg: Fruit Name - {{ item }}
+      loop:
+        - apple
+        - banana
+    - name: Print Course
+      ansible.builtin.debug:
+        msg: Course Name - {{ item["course_name"]}} , Trainer Name - {{ item["trainer_name"]}}
+      #when: item["course_name"] == "AWS"
+      loop:
+        - { course_name: DevOps, trainer_name: Raju}
+        - { course_name: AWS, trainer_name: Rahim}
